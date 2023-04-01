@@ -1,23 +1,24 @@
-import random
+ # Define a list of available teachers
+teachers = ["Mr. Smith", "Ms. Jones", "Mrs. Brown", "Mr. Lee", "Ms. Kim"]
 
-# Define the number of courses and time slots
-NUM_COURSES = 10
-NUM_TIME_SLOTS = 5
+# Define a list of classes to be taught
+classes = ["Math", "Science", "English", "History", "Art"]
 
-# Define the list of courses and the list of time slots
-courses = ["Course " + str(i) for i in range(1, NUM_COURSES + 1)]
-time_slots = ["Monday 9:00-11:00", "Tuesday 9:00-11:00", "Wednesday 9:00-11:00", "Thursday 9:00-11:00", "Friday 9:00-11:00"]
+# Create an empty dictionary to store teacher assignments
+assignments = {}
 
-# Define the timetable dictionary
-timetable = {}
+# Assign teachers to classes
+for c in classes:
+    # Find a teacher who hasn't been assigned a class yet
+    for t in teachers:
+        if t not in assignments.values():
+            # Assign the teacher to the class
+            assignments[c] = t
+            # Remove the teacher from the available teachers list
+            teachers.remove(t)
+            break
 
-# Assign each course to a random time slot
-for course in courses:
-    time_slot = random.choice(time_slots)
-    timetable[course] = time_slot
-    time_slots.remove(time_slot)
-
-# Print the timetable
-print("Department Timetable:\n")
-for course, time_slot in timetable.items():
-    print(course + ": " + time_slot)
+# Print out the assignments
+print("Teacher Assignments:")
+for c, t in assignments.items():
+    print(c + ": " + t)
