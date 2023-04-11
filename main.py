@@ -1,5 +1,5 @@
  # Define a list of available teachers
-teachers = ["Mr. Smith", "Ms. Jones", "Mrs. Brown", "Mr. Lee", "Ms. Kim"]
+teachers = ["Mr. Salman", "Ms. Jalil", "Mrs. Nazish", "Mr. Ali", "Ms. Maria"]
 
 # Define a list of classes to be taught
 classes = ["Math", "Science", "English", "History", "Art"]
